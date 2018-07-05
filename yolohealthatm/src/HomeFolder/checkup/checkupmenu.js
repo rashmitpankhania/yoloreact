@@ -8,7 +8,7 @@ const CheckUpMenu = (props) => {
     onPress,
   } = props;
   return (
-    <div onClick={onPress} role="presentation" onKeyPress={onPress}>
+    <div onClick={() => onPress()} role="presentation" onKeyPress={() => onPress()}>
       {name}
     </div>
   );

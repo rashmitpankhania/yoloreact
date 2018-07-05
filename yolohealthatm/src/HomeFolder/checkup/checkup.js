@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import CheckUpMenu from './checkupmenu';
 
 class CheckUp extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       testName: 'basic',
       tests: ['basicA', 'basicB', 'basicC'],
@@ -34,14 +34,14 @@ class CheckUp extends Component {
     }
     console.log(currentTestName);
     console.log(currentTests);
-    this.setState = {
+    this.setState({
       testName: currentTestName,
       tests: currentTests,
-    };
+    });
   }
 
   renderCheckup(name) {
-    return <CheckUpMenu name={name} onPress={this.checkUpEvent} />;
+    return <CheckUpMenu name={name} onPress={() => this.checkUpEvent(name)} />;
   }
 
   render() {
