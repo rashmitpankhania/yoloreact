@@ -1,13 +1,8 @@
-import React,{Component} from 'react';
+import React from 'react';
 
-class Consult extends Component{
-    render() {
-        return (
-            <div>
-                place holder of Consult
-            </div>
-        );
-    }
-}
-
+const Consult = () => (
+  <div>
+place holder of Consult
+  </div>
+);
 export default Consult;

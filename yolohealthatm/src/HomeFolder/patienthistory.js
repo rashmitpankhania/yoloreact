@@ -1,15 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class PatientHistory extends Component {
-    render() {
-        return (
-            <div>
-                place holder of PatientHistory
-            </div>
-        );
-    }
-}
-
-export {
-    PatientHistory
-};
+const PatientHistory = () => (
+  <div>
+place holder of PatientHistory
+  </div>
+);
+export default PatientHistory;

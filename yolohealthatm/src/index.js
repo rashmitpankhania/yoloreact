@@ -1,37 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { App } from './App';
-import Consult from "./HomeFolder/consult";
-import { CheckUp } from "./HomeFolder/checkup/checkup";
-import { PatientHistory } from "./HomeFolder/patienthistory";
-import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import App from './App';
+import Consult from './HomeFolder/consult';
+import CheckUp from './HomeFolder/checkup/checkup';
+import PatientHistory from './HomeFolder/patienthistory';
+import registerServiceWorker from './registerServiceWorker';
 import { HomeButton } from './HomeFolder/home';
 
 const PrimaryLayout = () => (
-    <div className="primary-layout">
-        <header>
+  <div className="primary-layout">
+    <header>
             yolohealth
-      </header>
-        <main>
-            <Switch>
-                <Route path='/checkup' component={CheckUp} />
-                <Route path='/history' component={PatientHistory} />
-                <Route path='/consult' component={Consult} />
-                <Route path='/' component={App} />
-            </Switch>
-        </main>
-        <footer>
-            <HomeButton />
-        </footer>
-    </div>
-)
+    </header>
+    <main>
+      <Switch>
+        <Route path="/checkup" component={CheckUp} />
+        <Route path="/history" component={PatientHistory} />
+        <Route path="/consult" component={Consult} />
+        <Route path="/" component={App} />
+      </Switch>
+    </main>
+    <footer>
+      <HomeButton />
+    </footer>
+  </div>
+);
 
 const RoutedApp = () => (
-    <BrowserRouter>
-        <PrimaryLayout />
-    </BrowserRouter>
+  <BrowserRouter>
+    <PrimaryLayout />
+  </BrowserRouter>
 
 );
 ReactDOM.render(<RoutedApp />, document.getElementById('root'));
