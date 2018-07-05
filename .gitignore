@@ -65,3 +65,5 @@ yolohealthatm/package-lock\.json
 yolohealthatm/\.eslintrc\.json
 
 yolohealthatm/package\.json
+
+\.vscode/

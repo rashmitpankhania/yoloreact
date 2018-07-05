@@ -1,6 +1,6 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
-class PatientHistory extends Component{
+class PatientHistory extends Component {
     render() {
         return (
             <div>
@@ -12,4 +12,4 @@ class PatientHistory extends Component{
 
 export {
     PatientHistory
-} ;
+};

@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { App } from './App';
 import Consult from "./HomeFolder/consult";
-import { CheckUp } from "./HomeFolder/checkup";
+import { CheckUp } from "./HomeFolder/checkup/checkup";
 import { PatientHistory } from "./HomeFolder/patienthistory";
 import registerServiceWorker from './registerServiceWorker';
-import { Switch, BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { HomeButton } from './HomeFolder/home';
 
 const PrimaryLayout = () => (
@@ -15,10 +15,12 @@ const PrimaryLayout = () => (
             yolohealth
       </header>
         <main>
-            <Route path='/checkup' component={CheckUp} />
-            <Route path='/history' component={PatientHistory} />
-            <Route path='/consult' component={Consult} />
-            <Route path='/' component={App} />
+            <Switch>
+                <Route path='/checkup' component={CheckUp} />
+                <Route path='/history' component={PatientHistory} />
+                <Route path='/consult' component={Consult} />
+                <Route path='/' component={App} />
+            </Switch>
         </main>
         <footer>
             <HomeButton />
