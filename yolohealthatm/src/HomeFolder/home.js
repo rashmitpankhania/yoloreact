@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Switch, BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-
 
 class Home extends Component {
     render() {
@@ -22,14 +20,22 @@ class Home extends Component {
 }
 
 class HomeMenu extends Component {
-    render(prpos) {
+    render() {
         return (
 
-            <div>{this.props.name}
-                <Link to={`/${this.props.name}`}>Link</Link>
+            <div>
+                <Link to={`/${this.props.name}`}>{this.props.name}</Link>
 
             </div>
         )
     }
 }
-export default Home;
+
+const HomeButton = () => (
+    <Link to="/">HomeButton</Link>
+);
+
+export {
+    Home,
+    HomeButton
+}
