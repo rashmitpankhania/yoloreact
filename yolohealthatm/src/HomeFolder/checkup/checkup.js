@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 import CheckUpMenu from './checkupmenu';
 
 class CheckUp extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       testName: 'basic',
       tests: ['basicA', 'basicB', 'basicC'],
@@ -49,6 +51,9 @@ class CheckUp extends Component {
       testName,
       tests,
     } = this.state;
+    const {
+      match,
+    } = this.props;
     return (
       <div>
         <div>
@@ -65,10 +70,20 @@ class CheckUp extends Component {
           {testName}
           {tests}
         </div>
+        <Link to={`${match.url}/${testName}`}>
+Start
+        </Link>
       </div>
     );
   }
 }
 
+CheckUp.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      name: PropTypes.node,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default CheckUp;
