@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './App';
 import Consult from './HomeFolder/consult';
 import CheckUp from './HomeFolder/checkup/checkup';
-import StartTestComponent from './HomeFolder/checkup/starttestcomponent';
+import StartTestComponent from './HomeFolder/checkup/starttest';
 import PatientHistory from './HomeFolder/patienthistory';
 import registerServiceWorker from './registerServiceWorker';
 import { HomeButton } from './HomeFolder/home';

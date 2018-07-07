@@ -1,13 +1,19 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import StartTestComponent from './starttestcomponent';
+import { PropTypes } from 'prop-types';
 
-const StartTest = match => (
+const StartTestComponent = ({ match }) => (
   <div>
-    <Route path={`${match.url}/:name`} component={StartTestComponent} />
+place holder of StartTestComponent
+    {' '}
+    {match.params.name}
   </div>
 );
 
-
-// StartTest.propTypes = { name: PropTypes.string.isRequired };
-export default StartTest;
+StartTestComponent.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      name: PropTypes.node,
+    }).isRequired,
+  }).isRequired,
+};
+export default StartTestComponent;
