@@ -1,40 +1,46 @@
-import React, { Component } from "react";
-import {Link} from "react-router-dom";
-import { Switch, BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
 
-class Home extends Component {
-    render() {
-        return (
-            <div>
-                    <div >
-                     <HomeMenu name="consult"/>
-                    </div>
-                    <div >
-                    <HomeMenu name="checkup"/>
-                    </div>
-                    <div >
-                    <HomeMenu name="history"/>
-                    </div>
+const Home = () => (
+  <div>
+    <div>
+      <HomeMenu name="consult" />
+    </div>
+    <div>
+      <HomeMenu name="checkup" />
+    </div>
+    <div>
+      <HomeMenu name="history" />
+    </div>
+  </div>
+);
 
-                   
-              
-            </div>
-        )
-    }
-}
+const HomeMenu = (props) => {
+  const {
+    name,
+  } = props;
+  return (
+    <div>
+      <Link to={`/${name}`}>
+        {name}
+      </Link>
+    </div>);
+};
 
-class HomeMenu extends Component {
-    render(prpos) {
-        return (
-            
-            <div>{this.props.name}
-              
-                <Router>
-                     <Route  path={this.props.name}  />
-                </Router>
-            </div>
-        )
-    }
-}
-export default Home;
+const HomeButton = () => (
+  <Link to="/">
+HomeButton
+  </Link>
+);
+
+HomeMenu.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+export {
+  Home,
+  HomeButton,
+  HomeMenu,
+};
