@@ -34,8 +34,6 @@ class CheckUp extends Component {
     } else {
       currentTests = ['basicA', 'basicB', 'basicC'];
     }
-    console.log(currentTestName);
-    console.log(currentTests);
     this.setState({
       testName: currentTestName,
       tests: currentTests,
