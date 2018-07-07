@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import App from './App';
 import Consult from './HomeFolder/consult';
 import CheckUp from './HomeFolder/checkup/checkup';
 import StartTestComponent from './HomeFolder/checkup/starttest';
 import PatientHistory from './HomeFolder/patienthistory';
 import registerServiceWorker from './registerServiceWorker';
-import { HomeButton } from './HomeFolder/home';
+import { HomeButton, Home } from './HomeFolder/home';
 
 const PrimaryLayout = () => (
   <div className="primary-layout">
@@ -21,7 +20,7 @@ const PrimaryLayout = () => (
         <Route path="/checkup" component={CheckUp} />
         <Route path="/history" component={PatientHistory} />
         <Route path="/consult" component={Consult} />
-        <Route path="/" component={App} />
+        <Route path="/" component={Home} />
       </Switch>
     </main>
     <footer>
