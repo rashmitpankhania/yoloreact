@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import './home.css';
 
 
 const Home = () => (
-  <div>
+  <div className="cards-wrapper">
     <div>
       <HomeMenu name="consult" />
     </div>
@@ -22,10 +23,15 @@ const HomeMenu = (props) => {
     name,
   } = props;
   return (
-    <div>
-      <Link to={`/${name}`}>
+    <div className="homeCardContainer">
+    <Link to={`/${name}`}>
+      <div className="homeCard">
+      
         {name}
+      
+      </div>
       </Link>
+    
     </div>);
 };
 

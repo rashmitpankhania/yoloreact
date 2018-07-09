@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+  
 
 
 const CheckUpMenu = (props) => {
@@ -8,8 +9,11 @@ const CheckUpMenu = (props) => {
     onPress,
   } = props;
   return (
-    <div onClick={() => onPress()} role="presentation" onKeyPress={() => onPress()}>
+    <div className="col-md-3" onClick={() => onPress()} role="presentation" onKeyPress={() => onPress()}>
+      <div className="testCard">
+
       {name}
+      </div>
     </div>
   );
 };

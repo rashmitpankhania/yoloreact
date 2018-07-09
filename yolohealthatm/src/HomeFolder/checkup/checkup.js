@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import CheckUpMenu from './checkupmenu';
+import './checkup.css';
 
 class CheckUp extends Component {
   constructor(props) {
@@ -53,8 +54,8 @@ class CheckUp extends Component {
       match,
     } = this.props;
     return (
-      <div>
-        <div>
+      <div className="row">
+        <div className="col-md-12">
           {this.renderCheckup('basic')}
           {this.renderCheckup('diabetes')}
           {this.renderCheckup('heart')}
@@ -64,13 +65,17 @@ class CheckUp extends Component {
           {this.renderCheckup('urine')}
           {this.renderCheckup('eye')}
         </div>
-        <div>
+        <div  className="col-md-12">
           {testName}
           {tests}
-        </div>
-        <Link to={{ pathname: `${match.url}/${testName}`, state: { tests } }}>
-Start
+          <div>
+          <Link to={{ pathname: `${match.url}/${testName}`, state: { tests } }}>
+              Start
         </Link>
+           </div> 
+         
+        </div>
+       
       </div>
     );
   }
