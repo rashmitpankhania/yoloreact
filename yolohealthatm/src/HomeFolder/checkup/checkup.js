@@ -68,7 +68,7 @@ class CheckUp extends Component {
           {testName}
           {tests}
         </div>
-        <Link to={`${match.url}/${testName}`}>
+        <Link to={{ pathname: `${match.url}/${testName}`, state: { tests } }}>
 Start
         </Link>
       </div>

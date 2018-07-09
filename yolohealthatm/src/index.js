@@ -4,7 +4,7 @@ import './index.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Consult from './HomeFolder/consult';
 import CheckUp from './HomeFolder/checkup/checkup';
-import StartTestComponent from './HomeFolder/checkup/starttest';
+import StartCheckUpTest from './HomeFolder/checkup/startcheckuptest';
 import PatientHistory from './HomeFolder/patienthistory';
 import registerServiceWorker from './registerServiceWorker';
 import { HomeButton, Home } from './HomeFolder/home';
@@ -13,10 +13,11 @@ const PrimaryLayout = () => (
   <div className="primary-layout">
     <header>
             yolohealth
+      <hr />
     </header>
     <main>
       <Switch>
-        <Route path="/checkup/:name" component={StartTestComponent} />
+        <Route path="/checkup/:name" component={StartCheckUpTest} />
         <Route path="/checkup" component={CheckUp} />
         <Route path="/history" component={PatientHistory} />
         <Route path="/consult" component={Consult} />
@@ -24,6 +25,7 @@ const PrimaryLayout = () => (
       </Switch>
     </main>
     <footer>
+      <hr />
       <HomeButton />
     </footer>
   </div>
